@@ -1,0 +1,114 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 299, in script
+    $ renpy.pause(hard=True)
+  File "game/script.rpy", line 299, in <module>
+    $ renpy.pause(hard=True)
+      ~~~~~~~~~~~^^^^^^^^^^^
+  File "game/script.rpy", line 227, in execute
+    screen fox_screen():
+  File "game/script.rpy", line 227, in execute
+    screen fox_screen():
+  File "game/script.rpy", line 232, in execute
+    frame:
+  File "game/script.rpy", line 235, in execute
+    grid 3 3:
+  File "game/script.rpy", line 237, in execute
+    for i, cell in enumerate(mechanics.get_foxes()):
+  File "game/script.rpy", line 238, in execute
+    if cell == "F":
+  File "game/script.rpy", line 239, in execute
+    imagebutton:
+  File "game/script.rpy", line 239, in keywords
+    imagebutton:
+  File "game/script.rpy", line 240, in <module>
+    idle Transform("assets/fox_hole.png", size=(FOX_SIZE, FOX_SIZE))
+                                                ^^^^^^^^            
+NameError: name 'FOX_SIZE' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "game/script.rpy", line 299, in script
+    $ renpy.pause(hard=True)
+  File "renpy/ast.py", line 1193, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1276, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 299, in <module>
+    $ renpy.pause(hard=True)
+      ~~~~~~~~~~~^^^^^^^^^^^
+  File "renpy/exports/statementexports.py", line 191, in pause
+    rv = renpy.ui.interact(mouse="pause", type="pause", roll_forward=roll_forward, pause=delay, pause_modal=modal)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ui.py", line 306, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2163, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "renpy/display/core.py", line 2709, in interact_core
+    root_widget.visit_all(lambda d: d.per_interact())
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 460, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 460, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 460, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 503, in visit_all
+    callback(self)
+    ~~~~~~~~^^^^^^
+  File "renpy/display/core.py", line 2709, in <lambda>
+    root_widget.visit_all(lambda d: d.per_interact())
+                                    ~~~~~~~~~~~~~~^^ 
+  File "renpy/display/screen.py", line 514, in per_interact
+    self.update()
+    ~~~~~~~~~~~^^
+  File "renpy/display/screen.py", line 715, in update
+    self.screen.function(**self.scope)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "game/script.rpy", line 227, in execute
+    screen fox_screen():
+  File "game/script.rpy", line 227, in execute
+    screen fox_screen():
+  File "game/script.rpy", line 232, in execute
+    frame:
+  File "game/script.rpy", line 235, in execute
+    grid 3 3:
+  File "game/script.rpy", line 237, in execute
+    for i, cell in enumerate(mechanics.get_foxes()):
+  File "game/script.rpy", line 238, in execute
+    if cell == "F":
+  File "game/script.rpy", line 239, in execute
+    imagebutton:
+  File "game/script.rpy", line 239, in keywords
+    imagebutton:
+  File "renpy/python.py", line 1308, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1301, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 240, in <module>
+    idle Transform("assets/fox_hole.png", size=(FOX_SIZE, FOX_SIZE))
+                                                ^^^^^^^^            
+NameError: name 'FOX_SIZE' is not defined
+
+Windows-11-10.0.26200-SP0 AMD64
+Ren'Py 8.5.3.26051504
+jamegam 1.0
+Mon Oct 26 00:32:27 2026

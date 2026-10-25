@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 30: show statement expects a non-empty block.
+    show butcher normal:
+                        ^
+
+Ren'Py Version: Ren'Py 8.5.3.26051504
+Sun Oct 25 23:23:16 2026
